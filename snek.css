@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #372f1f, #19110b 70%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f5f9;
+  padding: 16px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffb406;
+  text-shadow: 0 0 12px rgba(211, 208, 13, 0.868);
+}
+
+.score-board {
+  display: flex;
+  gap: 24px;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.score-board span {
+  color: #dede4a;
+  font-weight: bold;
+}
+
+.canvas-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px #ac5a0e, 0 0 30px rgba(214, 132, 17, 0.522);
+}
+
+canvas {
+  display: block;
+  background: #895802;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(56, 41, 9, 0.75);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.controls-hint {
+  font-size: 0.8rem;
+  color: #8b7764;
+  text-align: center;
+}
+
+.touch-controls {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.mid-row {
+  display: flex;
+  gap: 6px;
+}
+
+.dir-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  background: #e2d10d;
+  color: #d47617;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 0 #8f0606;
+  user-select: none;
+}
+
+.dir-btn:active {
+  background: #bc9111;
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  canvas {
+    width: 320px;
+    height: 320px;
+  }
+
+  .touch-controls {
+    display: flex;
+  }
+}
